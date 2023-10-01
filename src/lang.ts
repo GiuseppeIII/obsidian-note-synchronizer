@@ -99,7 +99,7 @@ const zh_cn: Locale = {
   settingHeadingLevelName: '字段名称标题层级',
   settingHeadingLevelDescription:
     '从 Anki 笔记类型生成模板时，将 Anki 的字段名称表示为几级标题（一级、二级、三级等）'
-};
+} as Locale;
 
 const locales: { [k: string]: Partial<Locale> } = {
   en,

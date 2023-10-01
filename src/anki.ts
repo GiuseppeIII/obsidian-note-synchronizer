@@ -116,7 +116,8 @@ class Anki {
   }
 
   async addTagsToNotes(noteIds: number[], tags: string[]) {
-    const tagstring = tags.join(' ');
+    const convertedTags = tags.map(tag => tag.replace(/\//g, '::'));
+    const tagstring = convertedTags.join(' ');
     return this.invoke('addTags', {
       notes: noteIds,
       tags: tagstring
@@ -124,7 +125,8 @@ class Anki {
   }
 
   async removeTagsFromNotes(noteIds: number[], tags: string[]) {
-    const tagstring = tags.join(' ');
+    const convertedTags = tags.map(tag => tag.replace(/\//g, '::'));
+    const tagstring = convertedTags.join(' ');
     return this.invoke('removeTags', {
       notes: noteIds,
       tags: tagstring
