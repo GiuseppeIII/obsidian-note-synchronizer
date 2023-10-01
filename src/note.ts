@@ -114,10 +114,11 @@ export class NoteManager {
     if (isCloze)
       return [];
 
+    if (header == undefined)
+      header = title;
     if (this.settings.linkify)
-      title = `[[${title}]]`;
-    if (header != undefined)
-      return [header + '\n\n' + title]
+      title = `[[${title}|${header}]]`;
+    
     return [title]
   }
 
