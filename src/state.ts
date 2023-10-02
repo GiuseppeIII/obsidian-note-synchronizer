@@ -175,12 +175,16 @@ export class NoteState extends State<number, NoteDigest, Note | undefined> {
     return super.delete(key);
   }
 
+  convertTags = (tags: string[]) => {
+    return tags.map(tag => tag.replace(/\//g, '::'));
+  }
+
   async handleAddNote(note: Note) {
     const ankiNote = {
       deckName: note.renderDeckName(),
       modelName: note.typeName,
       fields: this.formatter.format(note),
-      tags: note.tags
+      tags: this.convertTags(note.tags)
     };
     console.log(`Adding note for ${note.title()}`, ankiNote);
     let idOrError = await this.anki.addNote(ankiNote);

@@ -3,7 +3,7 @@ import { NoteDigest, NoteTypeDigest } from "./state";
 import { MD5 } from "object-hash";
 import { Settings } from "./setting";
 
-const PICTURE_EXTENSION = ["png", "jpg", "jpeg", "gif", "bmp", "svg"];
+const PICTURE_EXTENSION = ["png", "jpg", "jpeg", "gif", "bmp", "svg", "webp"];
 const VIDEO_EXTENSION = ["mp3", "wav", "m4a", "ogg", "3gp", "flac", "mp4", "ogv", "mov", "mkv", "webm"];
 
 export interface MediaNameMap {
